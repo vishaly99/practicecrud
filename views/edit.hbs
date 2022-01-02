@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{viewTitle}}</h1>
+    <form action="/student/edit/{{student._id}}" method="post">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input disabled type="text" name="id" class="form-control" value="{{student._id}}">
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Name" class="form-control" value="{{student.Name}}">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="Email" class="form-control" value="{{student.Email}}">
+                </div>
+                <div class="form-group">
+                    <label>Contactno</label>
+                    <input type="number" name="Contactno" class="form-control" value="{{student.Contactno}}">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <input type="radio" name="Gender" class="form-control" value="Male"  {{#if "student.Gender== 'Male'"}} checked {{/if}}>Male
+                    <input type="radio" name="Gender" class="form-control" value="Female" {{#if "student.Gender =='FeMale' "}} checked {{/if}}>Female
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <select name="City" id="City">
+                        <option value="Surat"  {{#if "student.City== 'Surat'"}} selected {{/if}}>Surat</option>
+                        <option value="Valsad"  {{#if "student.City== 'Valsad'"}} selected {{/if}}>Valsad</option>
+                        <option value="Vapi" {{#if "student.City== 'Vapi'"}} selected {{/if}}>Vapi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+    </form>
+</body>
+</html>
